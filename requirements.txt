@@ -1,0 +1,2 @@
+scamp ~= 0.12
+scamp-extensions ~= 0.3
