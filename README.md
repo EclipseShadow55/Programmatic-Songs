@@ -14,8 +14,9 @@
 - 4 parts: Melody (Clarinet), Harmony (Cello), Bass (Double Bass), High (Flute)
 ### Song 2
 - 4 Parts: Melody (Grand Piano), Harmony (Grand Piano), Bass (Star Theme + Warm Pad + Synth Bass 2), Drums (Electronic Kit - C2 = Bass Drum, D2 = Snare Drum, F#2 = Closed Hat)
-
+### Song 3
+- 4 Parts: Melody (Clarinet), Harmony (Cello), Bass (Star Theme + Warm Pad + Synth Bass 2), Drums (Electronic Kit - C2 = Bass Drum, D2 = Snare Drum, F#2 = Closed Hat)
 ## Setting Up Recording
-- SCAMP has a recording feature implemented, but as of early August 2026, does not have any public API for it. The only way to access it is to add a recording path directly in the settings file.
+- SCAMP has a recording feature implemented, but as of the time this was developed, it does not have any public API for it. The only way to access it is to add a recording path directly in the settings file.
 - To do this automatically, run `scamp_recording/scamp_recording_setup.py`, then just run `music.py` as normal and it will record the song to a wav file on top of playing it.
 - To reset it to its original value, run `scamp_recording/scamp_recording_reset.py`. DO NOT DELETE `scamp_recording/scamp_reset_settings.json` or the resetting won't work.
