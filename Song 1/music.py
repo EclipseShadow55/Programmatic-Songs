@@ -7,8 +7,8 @@ from utilities.scamp_utils import PlayPart, MusicSeq
 
 
 composing_key = N("A5")
-actual_key = N("D#6")
-current_scale = Scales.NaturalScales.Minor(actual_key)
+key = N("D#6")
+scale = Scales.NaturalScales.Minor(key)
 
 
 # START
@@ -138,7 +138,7 @@ bass_inst = s.new_part("Double Bass")
 high_inst = s.new_part("Flute")
 
 
-def music_play():
+def play():
     s.fork(PlayPart(melody_line, melody_inst, shift=6, debug=True))
     s.fork(PlayPart(harmony_line, harmony_inst, shift=6))
     s.fork(PlayPart(bass_line, bass_inst, shift=6))
@@ -148,4 +148,4 @@ def music_play():
 
 
 if __name__ == "__main__":
-    music_play()
+    play()

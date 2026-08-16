@@ -6,8 +6,8 @@ from utilities.music_structs import Scales, N, C, R
 from utilities.scamp_utils import PlayPart, MusicSeq
 
 
-current_key = N("C5")
-current_scale = Scales.NaturalScales.Major(current_key)
+key = N("C5")
+scale = Scales.NaturalScales.Major(key)
 
 # PATTERN
 drum_pattern = MusicSeq(*[
@@ -118,7 +118,7 @@ synth_bass_inst = s.new_part("Synth Bass 2")
 melody_inst = s.new_part("Grand Piano")
 
 
-def music_play():
+def play():
     s.fork(PlayPart(drum_line, drum_inst, vol=0.5))
     s.fork(PlayPart(harmony_line, harmony_inst, vol=0.7))
     s.fork(PlayPart(bass_line, star_bass_inst, 0.7))
@@ -130,4 +130,4 @@ def music_play():
 
 
 if __name__ == '__main__':
-    music_play()
+    play()
