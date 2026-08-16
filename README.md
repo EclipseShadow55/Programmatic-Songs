@@ -7,7 +7,8 @@
 5. Run `music.py` to play the music live from the script
 ## Description
 - Made using SCAMP (Suite for Computer-Assisted Music in Python) for composition and playback
-- Uses instruments from the [GeneralUser-GS Soundfont by S. Christian Collins](https://schristiancollins.com/generaluser.php), which follows to the General MIDI 2.0 Standard
+- Uses [GeneralUser-GS Soundfont by S. Christian Collins](https://schristiancollins.com/generaluser.php) instruments, which follows the General MIDI 2.0 Standard
+- Used FluteSusNV from [VSCO 2 Community Edition](https://versilian-studios.com/vsco-community/)
 - Implements helper structures in `utilities\scamp_utils.py`
 ## Songs
 ### Song 1
@@ -16,6 +17,8 @@
 - 4 Parts: Melody (Grand Piano), Harmony (Grand Piano), Bass (Star Theme + Warm Pad + Synth Bass 2), Drums (Electronic Kit - C2 = Bass Drum, D2 = Snare Drum, F#2 = Closed Hat)
 ### Song 3
 - 4 Parts: Melody (Clarinet), Harmony (Cello), Bass (Star Theme + Warm Pad + Synth Bass 2), Drums (Electronic Kit - C2 = Bass Drum, D2 = Snare Drum, F#2 = Closed Hat)
+### Song 4
+- 4 Parts: Melody (Flute (FluteSusNV)), Harmony (Cello), Bass (Double Bass + Star Theme + Warm Pad), Bass Harmony (Double Bass)
 ## Setting Up Recording
 - SCAMP has a recording feature implemented, but as of the time this was developed, it does not have any public API for it. The only way to access it is to add a recording path directly in the settings file.
 - To do this automatically, run `scamp_recording/scamp_recording_setup.py`, then just run `music.py` as normal and it will record the song to a wav file on top of playing it.

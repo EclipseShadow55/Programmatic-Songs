@@ -1,2 +1,3 @@
 scamp ~= 0.12
 scamp-extensions ~= 0.3
+numpy ~= 2.5.2

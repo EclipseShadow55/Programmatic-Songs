@@ -6,8 +6,8 @@ from utilities.music_structs import Scales, N, C
 from utilities.scamp_utils import PlayPart, MusicSeq
 
 
-current_key = N("A3")
-current_scale = Scales.NaturalScales.Phrygian(current_key)
+key = N("A5")
+scale = Scales.NaturalScales.Phrygian(key)
 
 # PATTERN
 harmony_pattern = MusicSeq(*[
@@ -98,7 +98,7 @@ drum_inst = s.new_part("Electronic Kit")
 melody_inst = s.new_part("Clarinet")
 
 
-def music_play():
+def play():
     s.fork(PlayPart(harmony_line, harmony_inst, vol=0.1))
     s.fork(PlayPart(bass_line, star_bass_inst, vol=0.2))
     s.fork(PlayPart(bass_line, pad_bass_inst, vol=0.2))
@@ -110,4 +110,4 @@ def music_play():
 
 
 if __name__ == '__main__':
-    music_play()
+    play()
