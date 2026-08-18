@@ -61,7 +61,7 @@ double_bass_harm_line = MusicSeq(*[
     (R(), 4/1),
     bass_harm_pattern[4:],
     bass_harm_pattern,
-    (R(), 4/1),
+    (R(), 1/1),
 ])
 melody_line = MusicSeq(*[
     (N("F5"), 1/8), (N("A5"), 1/8), (N("C6"), 1/8),
@@ -78,7 +78,9 @@ melody_line = MusicSeq(*[
 
     (N("C5"), 1/8), (N("A4"), 1/8), (N("A#4"), 1/2), (N("D5"), 1/4),
 
-    (N("C5"), 1/8), (N("D5"), 9/8)
+    (N("C5"), 1/8), (N("D5"), 9/8),
+
+    (R(), 1/1),
 ])
 automation_line = AutoSeq(*[
     (R(), 3/8 + 3/1),
@@ -97,12 +99,12 @@ melody_inst = s.new_part("Flute", soundfont=str(Path(__file__).parent.parent / "
 
 
 def play():
-    s.fork(PlayPart(harmony_line, harmony_inst, vol=0.8))
-    s.fork(PlayPart(double_bass_line, double_bass_inst, vol=0.8))
-    s.fork(PlayPart(star_bass_line, star_bass_inst, vol=0.8))
-    s.fork(PlayPart(pad_bass_line, pad_bass_inst, vol=0.8))
-    s.fork(PlayPart(double_bass_harm_line, double_bass_harm_inst, vol=0.8))
-    s.fork(PlayPart(melody_line, melody_inst))
+    s.fork(PlayPart(harmony_line, harmony_inst, vol=0.6))
+    s.fork(PlayPart(double_bass_line, double_bass_inst, vol=0.6))
+    s.fork(PlayPart(star_bass_line, star_bass_inst, vol=0.6))
+    s.fork(PlayPart(pad_bass_line, pad_bass_inst, vol=0.6))
+    s.fork(PlayPart(double_bass_harm_line, double_bass_harm_inst, vol=0.6))
+    s.fork(PlayPart(melody_line, melody_inst, vol=0.7))
 
     s.fork(TempoManager(s, automation_line))
 

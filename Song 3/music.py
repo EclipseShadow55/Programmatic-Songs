@@ -99,12 +99,12 @@ melody_inst = s.new_part("Clarinet")
 
 
 def play():
-    s.fork(PlayPart(harmony_line, harmony_inst, vol=0.1))
-    s.fork(PlayPart(bass_line, star_bass_inst, vol=0.2))
-    s.fork(PlayPart(bass_line, pad_bass_inst, vol=0.2))
-    s.fork(PlayPart(bass_line, synth_bass_inst, vol=0.2))
-    s.fork(PlayPart(drum_line, drum_inst, vol=0.1))
-    s.fork(PlayPart(melody_line, melody_inst, vol=0.3))
+    s.fork(PlayPart(harmony_line, harmony_inst, vol=0.5))
+    s.fork(PlayPart(bass_line, star_bass_inst))
+    s.fork(PlayPart(bass_line, pad_bass_inst))
+    s.fork(PlayPart(bass_line, synth_bass_inst))
+    s.fork(PlayPart(drum_line, drum_inst, vol=0.6))
+    s.fork(PlayPart(melody_line, melody_inst))
 
     s.wait_for_children_to_finish()
 

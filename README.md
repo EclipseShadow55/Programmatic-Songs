@@ -8,17 +8,19 @@
 ## Description
 - Made using SCAMP (Suite for Computer-Assisted Music in Python) for composition and playback
 - Uses [GeneralUser-GS Soundfont by S. Christian Collins](https://schristiancollins.com/generaluser.php) instruments, which follows the General MIDI 2.0 Standard
-- Used FluteSusNV from [VSCO 2 Community Edition](https://versilian-studios.com/vsco-community/)
+- Used FluteSusNV (Flute Sustains Non-Vibrato) from [VSCO 2 Community Edition](https://versilian-studios.com/vsco-community/)
 - Implements helper structures in `utilities\scamp_utils.py`
 ## Songs
 ### Song 1
 - 4 parts: Melody (Clarinet), Harmony (Cello), Bass (Double Bass), High (Flute)
 ### Song 2
-- 4 Parts: Melody (Grand Piano), Harmony (Grand Piano), Bass (Star Theme + Warm Pad + Synth Bass 2), Drums (Electronic Kit - C2 = Bass Drum, D2 = Snare Drum, F#2 = Closed Hat)
+- 4 Parts: Melody (Grand Piano), Harmony (Grand Piano), Bass (Star Theme + Warm Pad + Synth Bass 2), Drums (Electronic Kit - C2 = Electric Bass Drum, D2 = Electric Snare Drum, F#2 = Closed Hat)
 ### Song 3
-- 4 Parts: Melody (Clarinet), Harmony (Cello), Bass (Star Theme + Warm Pad + Synth Bass 2), Drums (Electronic Kit - C2 = Bass Drum, D2 = Snare Drum, F#2 = Closed Hat)
+- 4 Parts: Melody (Clarinet), Harmony (Cello), Bass (Star Theme + Warm Pad + Synth Bass 2), Drums (Electronic Kit - C2 = Electric Bass Drum, D2 = Electric Snare Drum, F#2 = Closed Hat)
 ### Song 4
 - 4 Parts: Melody (Flute (FluteSusNV)), Harmony (Cello), Bass (Double Bass + Star Theme + Warm Pad), Bass Harmony (Double Bass)
+### Song 5 (Wellermen)
+- 4 Parts: Melody (Cello), Drums (Electronic Kit - C#2 = Side Stick, C2 = Electric Bass Drum, D2 = Electric Snare Drum, E2 = Gated Snare Drum, G#2 = Electric Pedal Hat), Harmony (Grand Piano), Bass (Synth Bass 2)
 ## Setting Up Recording
 - SCAMP has a recording feature implemented, but as of the time this was developed, it does not have any public API for it. The only way to access it is to add a recording path directly in the settings file.
 - To do this automatically, run `scamp_recording/scamp_recording_setup.py`, then just run `music.py` as normal and it will record the song to a wav file on top of playing it.

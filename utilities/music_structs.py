@@ -177,6 +177,12 @@ class Chord:
                 ret.append(self.__class__(self.notes[:i+1]))
         return ret
 
+    def perfect_fifth(self):
+        return self + 7
+
+    def perfect_fourth(self):
+        return self + 5
+
 
 class Scale:
     shift_set = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
@@ -358,6 +364,26 @@ class Rest:
 
     def __repr__(self):
         return str(self)
+
+    def __add__(self, other: int | None):
+        if other is None:
+            return None
+        return self.__class__()
+
+    def __sub__(self, other: int | None):
+        if other is None:
+            return None
+        return self.__class__()
+
+    def __rshift__(self, other: int | None):
+        if other is None:
+            return None
+        return self.__class__()
+
+    def __lshift__(self, other: int | None):
+        if other is None:
+            return None
+        return self.__class__()
 
 
 N = Note.from_name
