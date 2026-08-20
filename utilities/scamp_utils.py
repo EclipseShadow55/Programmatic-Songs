@@ -181,6 +181,9 @@ class MusicSeq(Iterable):
 
         return self.__class__(*new_contents)
 
+    def __repr__(self):
+        return f"MusicSeq({self.contents})"
+
 
 # Automation Playing
 class TempoManager(Callable):

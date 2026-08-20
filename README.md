@@ -20,7 +20,11 @@
 ### Song 4
 - 4 Parts: Melody (Flute (FluteSusNV)), Harmony (Cello), Bass (Double Bass + Star Theme + Warm Pad), Bass Harmony (Double Bass)
 ### Song 5 (Wellermen)
-- 4 Parts: Melody (Cello), Drums (Electronic Kit - C#2 = Side Stick, C2 = Electric Bass Drum, D2 = Electric Snare Drum, E2 = Gated Snare Drum, G#2 = Electric Pedal Hat), Harmony (Grand Piano), Bass (Synth Bass 2)
+- 4 Parts: Melody (Cello), Harmony (Grand Piano), Bass (Synth Bass 2), Drums (Electronic Kit - C#2 = Side Stick, C2 = Electric Bass Drum, D2 = Electric Snare Drum, E2 = Gated Snare Drum, G#2 = Electric Pedal Hat)
+### Song 6
+- 4 Parts: Melody (Violin), Harmony (Cello), Bass (Star Theme + Warm Pad + Synth Bass 2), Drums (Electronic Kit - C2 = Electric Bass Drum, D2 = Electric Snare Drum, F#2 = Closed Hat)
+### Song 7
+- 4 Parts: Rhythm (Synth Bass 2), Harmony (Synth Strings 3), Drums (Electronic Kit - C2 = Electric Bass Drum), Upper Rhythm (Synth Bass 1)
 ## Setting Up Recording
 - SCAMP has a recording feature implemented, but as of the time this was developed, it does not have any public API for it. The only way to access it is to add a recording path directly in the settings file.
 - To do this automatically, run `scamp_recording/scamp_recording_setup.py`, then just run `music.py` as normal and it will record the song to a wav file on top of playing it.

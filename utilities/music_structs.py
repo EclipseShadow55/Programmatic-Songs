@@ -243,9 +243,12 @@ class Scale:
     def notes(self, end_cap: bool = True):
         return list(map(lambda x: self[x], range(len(self) + int(end_cap))))
 
-    def chord(self, index: int):
+    def chord(self, index: int, add: list | None = None):
         ind = index - 1
         notes = [self[ind], self[ind+2], self[ind+4]]
+        if add is not None:
+            for n in add:
+                notes.append(self[ind + n - 1])
         return Chord(*notes)
 
 class HeptaScale(Scale):
