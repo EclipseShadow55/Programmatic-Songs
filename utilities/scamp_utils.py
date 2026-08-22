@@ -184,6 +184,11 @@ class MusicSeq(Iterable):
     def __repr__(self):
         return f"MusicSeq({self.contents})"
 
+def repeat(item: Chord | Note | Rest, durations: list[int | float]):
+    ret = []
+    for dur in durations:
+        ret.append((item.copy(), dur))
+    return ret
 
 # Automation Playing
 class TempoManager(Callable):

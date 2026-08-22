@@ -5,8 +5,9 @@ from scamp import Session
 from utilities.music_structs import Scales, N, C, R
 from utilities.scamp_utils import PlayPart, MusicSeq
 
+
 key = N("C5")
-scale = Scales.NaturalScales.Minor(key)
+scale = Scales.NaturalScales.Major(key)
 
 
 # PATTERN
@@ -29,7 +30,7 @@ harmony_pattern = MusicSeq(*[
     (C("G3", "C4", "E4"), 1/1),
     (C("G3", "B3", "D4"), 1/1),
 ])
-drum_pattern = MusicSeq(*[(C("C2", "C2", "C2", "C2"), 3/16), (C("C2", "C2"), 3/16), (N("C2"), 1/8)] * 8)
+drum_pattern = MusicSeq(*[(C("C2", "C2", "C2", "C2"), 3/16), (C("C2", "C2"), 3/16), (C("C2"), 1/8)] * 8)
 upper_rhythm_pattern = MusicSeq(*[
     (N("D3"), 3/16), (N("D3"), 3/16), (N("A2"), 1/4), (N("A2"), 1/8), (N("A2"), 1/4),
     (N("D3"), 3/16), (N("D3"), 3/16), (N("A2"), 1/4), (N("A2"), 1/8), (N("A2"), 1/4),
@@ -37,6 +38,8 @@ upper_rhythm_pattern = MusicSeq(*[
     (N("B2"), 3/16), (N("B2"), 3/16), (N("B2"), 1/8), (N("C3"), 1/8), (N("B2"), 1/8), (N("C3"), 1/8), (N("B2"), 1/8),
 ])
 
+# INTRO
+drum_intro = MusicSeq(*[(C("C2", "C2", "C2", "C2"), 3/16), (C("C2", "C2"), 3/16), (C("C2"), 5/8)] * 4)
 
 # LINE
 rhythm_line = MusicSeq(*[
@@ -48,7 +51,8 @@ harmony_line = MusicSeq(*[
 ])
 drum_line = MusicSeq(*[
     (R(), 4/1),
-    drum_pattern * 4,
+    drum_intro,
+    drum_pattern * 3,
 ])
 upper_rhythm_line = MusicSeq(*[
     (R(), 12/1),

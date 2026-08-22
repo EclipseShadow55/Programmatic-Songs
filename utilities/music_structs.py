@@ -168,13 +168,27 @@ class Chord:
             ret_notes.append(note << other)
         return self.__class__(ret_notes)
 
-    def layered(self):
+    def layered(self, intervals: float | int | list[float | int], extra_hold: float | int | None = None):
         ret = []
-        for i, note in enumerate(self.notes):
-            if i == 0:
-                ret.append(self.notes[0])
+        if isinstance(intervals, list):
+            if len(intervals) == len(self.notes):
+                for i in range(len(self.notes)):
+                    if i == 0:
+                        ret.append((self.notes[0], intervals[i]))
+                    elif i == len(self.notes) - 1 and extra_hold is not None:
+                        ret.append((self.__class__(self.notes[:i + 1]), intervals[i] + extra_hold))
+                    else:
+                        ret.append((self.__class__(self.notes[:i + 1]), intervals[i]))
             else:
-                ret.append(self.__class__(self.notes[:i+1]))
+                raise ValueError("intervals list must be length of notes")
+        else:
+            for i in range(len(self.notes)):
+                if i == 0:
+                    ret.append((self.notes[0], intervals))
+                elif i == len(self.notes) - 1 and extra_hold is not None:
+                    ret.append((self.__class__(self.notes[:i + 1]), intervals + extra_hold))
+                else:
+                    ret.append((self.__class__(self.notes[:i + 1]), intervals))
         return ret
 
     def perfect_fifth(self):
@@ -386,6 +400,9 @@ class Rest:
     def __lshift__(self, other: int | None):
         if other is None:
             return None
+        return self.__class__()
+
+    def copy(self):
         return self.__class__()
 
 

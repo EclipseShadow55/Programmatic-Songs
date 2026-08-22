@@ -3,8 +3,7 @@ from pathlib import Path
 from scamp import Session
 
 from utilities.music_structs import Scales, N, C, R
-from utilities.scamp_utils import PlayPart, MusicSeq
-
+from utilities.scamp_utils import PlayPart, MusicSeq, repeat
 
 key = N("C5")
 scale = Scales.NaturalScales.Minor(key) # [C3, D3, E3, F3, G3, A3, B3, C4]
@@ -20,12 +19,12 @@ drum_pattern = MusicSeq(*[
     (N("F#2"), 1/8), (N("D2"), 1/8), (N("F#2"), 1/8), (N("F#2"), 1/8),
     (N("D2"), 1/8), (N("D2"), 1/8), (N("D2"), 1/8), (N("D2"), 1/16), (N("D2"), 1/16),
 ])
-bdrum_pattern = MusicSeq(*[(C("C2", "C2", "C2", "C2"), dur) for dur in [3/8, 3/8, 3/8, 3/8, 1/4, 1/4]]*2)
+bdrum_pattern = MusicSeq(*repeat(C("C2", "C2", "C2", "C2"), [3/8, 3/8, 3/8, 3/8, 1/4, 1/4])*2)
 harmony_pattern = MusicSeq(*[
-    *[(C("A3", "C4", "E4"), dur) for dur in [1/4, 1/2, 1/8, 1/8]],
-    *[(C("F3", "A3", "C4"), dur) for dur in [1/4, 1/2, 1/8, 1/8]],
-    *[(C("G3", "C4", "E4"), dur) for dur in [1/4, 1/2, 1/8, 1/8]],
-    *[(C("G3", "B3", "D4"), dur) for dur in [1/4, 1/2, 1/8, 1/8]],
+    *repeat(C("A3", "C4", "E4"), [1/4, 1/2, 1/8, 1/8]),
+    *repeat(C("F3", "A3", "C4"), [1/4, 1/2, 1/8, 1/8]),
+    *repeat(C("G3", "C4", "E4"), [1/4, 1/2, 1/8, 1/8]),
+    *repeat(C("G3", "B3", "D4"), [1/4, 1/2, 1/8, 1/8]),
 ])
 bass_pattern = MusicSeq(*[
     (C("A1", "A2"), 3/4), (C("E1", "E2"), 1/4),

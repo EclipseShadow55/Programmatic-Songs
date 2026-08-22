@@ -57,3 +57,16 @@ chords = MusicSeq(*[
     (scale.chord(4), 1/1),
     (scale.chord(5), 1/1),
 ])
+
+# ... - Major - 1-3-4-2
+key = N("C3")
+scale = Scales.NaturalScales.Major(key)
+
+chords = MusicSeq(*[
+    (chord, 1/1) for chord in [
+        scale.chord(1),
+        scale.chord(3),
+        scale.chord(4),
+        scale.chord(2),
+    ]
+])
