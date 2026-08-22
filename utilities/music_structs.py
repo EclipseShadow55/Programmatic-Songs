@@ -191,6 +191,25 @@ class Chord:
                     ret.append((self.__class__(self.notes[:i + 1]), intervals))
         return ret
 
+    def arpeggio(self, intervals: float | int | list[float | int]):
+        ret = []
+        if isinstance(intervals, list):
+            if len(intervals) == len(self.notes):
+                for i in range(len(self.notes)):
+                    if i == 0:
+                        ret.append((self.notes[0], intervals[i]))
+                    else:
+                        ret.append((self.__class__(self.notes[i]), intervals[i]))
+            else:
+                raise ValueError("intervals list must be length of notes")
+        else:
+            for i in range(len(self.notes)):
+                if i == 0:
+                    ret.append((self.notes[0], intervals))
+                else:
+                    ret.append((self.__class__(self.notes[i]), intervals))
+        return ret
+
     def perfect_fifth(self):
         return self + 7
 
